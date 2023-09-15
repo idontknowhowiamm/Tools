@@ -6,7 +6,12 @@ import time
 import json
 import threading
 import os
-
+pas=111
+passw=input('enter your pas')
+if passw==pas:
+   print('good')
+else:
+   print('error')
 def h():
    
    #sessi='318506585%3ACVqw0bbsyimqSY%3A7%3AAYc_Nfk3SCTLr1vnJW9ueTXVuaOVojaDNP-ikecVHA'
