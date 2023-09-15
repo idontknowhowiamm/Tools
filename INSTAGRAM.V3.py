@@ -8,7 +8,7 @@ import threading
 import os
 pas=111
 passw=input('enter your pas')
-if passw==pas:
+if pas==passw:
    print('good')
 else:
    print('error')
