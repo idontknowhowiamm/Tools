@@ -12,6 +12,7 @@ if passw==pas:
    print('good')
 else:
    print('error')
+   exit()
 def h():
    
    #sessi='318506585%3ACVqw0bbsyimqSY%3A7%3AAYc_Nfk3SCTLr1vnJW9ueTXVuaOVojaDNP-ikecVHA'
