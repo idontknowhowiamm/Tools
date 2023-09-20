@@ -10,13 +10,7 @@ import pyfiglet
 import string
 from OneClick import Hunter
 from uuid import uuid4
-try:
-    os.system('pip install faker')
-    os.system('pip install OneClick')
-    os.system('pip install pyfiglet')
-except:
-    ''
-os.system('clear')
+
 ############################
 E = '\033[1;31m'
 G = '\033[1;35m'
