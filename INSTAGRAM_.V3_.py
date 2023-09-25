@@ -252,7 +252,7 @@ def h():
             q+=1     
             user=re['users'][q]['user']['username']+'@gmail.com'
             print(f'{X}User :-> {user}')
-            with open("list_TEST.txt","a")as no:
+            with open("INSTAGRAMV3.txt","a")as no:
                 no.write(user+'\n')
     except:
         h()
@@ -537,7 +537,13 @@ def inst():
             else:
                 print(f'{Z}Error Account {Y}InstaGram : {Z}{email}')
 
+    except ConnectionError:
+        inst()
+    except ValueError:
+        inst()
     except requests.exceptions.Timeout:
+        inst()
+    except requests.ConnectionError:
         inst()
 
                 
