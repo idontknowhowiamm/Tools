@@ -12,7 +12,6 @@ from OneClick import Hunter
 import uuid
 from uuid import uuid4
 from user_agent import generate_user_agent
-from fake_useragent import UserAgent
 ############################
 E = '\033[1;31m'
 G = '\033[1;35m'
@@ -146,131 +145,117 @@ YU = '\x1b[38;5;200m' #وردي طوخ
 logo=pyfiglet.figlet_format('TOOLS')
 print(kk+logo)
 def h():
-
-    #nltk_words = words.words()  
-#sessi='318506585%3ACVqw0bbsyimqSY%3A7%3AAYc_Nfk3SCTLr1vnJW9ueTXVuaOVojaDNP-ikecVHA'
-    while True:
-        try:
-            hh = [
-        #"ar_AA", "ar_AE", "ar_BH", "ar_EG", "ar_JO", "ar_PS", "ar_SA", "az_AZ",
-        #"bg_BG", "bn_BD", "bs_BA", "cs_CZ", "da_DK", "de", "de_AT", "de_CH", "de_DE",
-        #"dk_DK", "el_CY", "el_GR", "en", "en_AU", "en_CA", "en_GB", "en_IE", "en_IN",
-        #"en_NZ", "en_PH", "en_TH", "en_US", "es", "es_AR", "es_CA", "es_CL", "es_CO",
-        #"es_ES", "es_MX", "et_EE", "fa_IR", "fi_FI", "fil_PH", "fr_BE", "fr_CA", "fr_CH",
-        #"fr_FR", "ga_IE", "he_IL", "hi_IN", "hr_HR", "hu_HU", "hy_AM", "id_ID",
-        #"it_CH", "it_IT", "ja_JP", "ka_GE", "ko_KR", "la", "lb_LU", "lt_LT", "lv_LV",
-        #"mt_MT", "ne_NP", "nl_BE", "nl_NL", "no_NO", "or_IN", "pl_PL", "pt_BR", "pt_PT",
-        #"ro_RO", "ru_RU", "sk_SK", "sl_SI", "sq_AL", "sv_SE", "ta_IN", "th", "th_TH",
-        #"tl_PH", "tr_TR", "tw_GH", "uk_UA", "vi_VN", "zh_CN", "zh_TW", "zu_ZA"
-    ]
-            #fak = Faker("zh_TW")
-            #usernames= fak.user_name()
-            faker = Faker()
-            cookies_value=faker.uuid4()
-            cookies_string=f"{cookies_value}"
-            #mid=str("".join(random.choice('ZNS8TAABAAGIluu5GdRKW7-kOo4vZIwIGQALAAFJh0hs0zugnqEWswdVZNOoBQALAAGNtLzGeFVzHXDZTR_3')for i in range(28)))
-            #mid = secrets.token_hex(28)
-            characters = string.ascii_letters + string.digits
-            mid = ''.join(secrets.choice(characters) for _ in range(28))
-            #csr=str("".join(random.choice('BgqHBezVdVLIwiiK2vnQoMeHfwDnEDdy4ev2UhLwIvaMMmcTnIPLlnYe9eKIrk6h')for i in range(32)))
-            characters = string.ascii_letters + string.digits
-            csrf_token = ''.join(secrets.choice(characters) for _ in range(32))
-            #datr=str("".join(random.choice('qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890')for i in range(24)))
-            #tok=str("".join(random.choice('BgqHBezVdVLIwiiK2vnQoMeHfwDnEDdy4ev2UhLwIvaMMmcTnIPLlnYe9eKIrk6hIchbyeD2EMfxlXtEidhVb473sX2nACJi')for i in range(32)))
-            #ce="".join(random.choice('1234567890')for i in range(3))
-            #nn="".join(random.choice('1234567890')for i in range(2))
-            #user1='3185065856117232390916041093751954736743761365466232234569147861383944408'
-            #kk = random.randint(10,11)
-            #user2="".join(random.choice(user1)for i in range(kk))
-            digits = string.digits
-        # توليد الرقم العشوائي
-            user2 = ''.join(secrets.choice(digits) for _ in range(10))
-            #yy='3ACVqw0bbsyimqSY%3A7%3AAYc_Nfk3SCTLr1vnJW9ueTXVuaOVojaDNP-ikecVHA%3AwsGfd6prEwVhQi%3A9%3AAYc2pc3P-nMx-khlBp4mOvkT39Zj7G6UXWn3CSXKag3Av36lq83bB4QMSG%3A28%3AAYeb3SKZK1ftXI_IOeqbkTLg1N_ve1vxmLkQ2qc05A3AyvYh8ztbg9qPOl%3A5%3AAYetGkds5jo18ck0uZW3I_tmj1dqk3Q9YRUrSaIYsQ3AOKLDLNPsHYGTJl%3A0%3AAYeYbOklyVCesUBg0pE2scMTw8RgelDdx4eVIQ_2hQ3AZvWuI0EbY8PXmw%3A2%3AAYexLLuc7bASBuyVWaAZuEy6qmu0f8XAnkZkgxyrIw3A3hbzW3nBjg5gXG%3A25%3AAYcyM6J_IhqRi2bFV1II17_FkjtAMjB0KXQ5Q0Khvw3AsyVlIj4ZDzyRPO%3A5%3AAYfGLAn2jh_fwDsnJupuDgVG2BBWgWiyjdH5fTi5Fw3A0zNy29n3aeW9ZI%3A16%3AAYe5NkWjqegZ_pMAlrXO_zbFTfnYdswA3I-CnKwd4w3ANhynbbv9oTPItn%3A11%3AAYfHL92Yand7PNHZfGZwHE3_PF89j5Rk0cxgTfrU8g3AOrDDBg3KyjB4Z4%3A27%3AAYcEUTo5aCtRrJSyN72i58IY5hJQLXQ_A8_QBuZPWQ3AvJYrEgtUCt5sgo%3A7%3AAYeFzP4zJ_5DPtyvbtmLARpmKt-8_2a4a0D07KNqUA3APjfLNuNjfj7z6u%3A25%3AAYfPNAz2A6IGXdKjqNg-Ge7NbJ1Y_ep6njcF2NlK5w3A2WIqaZiNrLBelY%3A27%3AAYfpoMf8AULuX7BmZnbAlFbKbtKz5yIRAM1QRCByWQ3AKg6IycgpKB3eVJ%3A3%3AAYfgX0TQlpmYSR6ba0ZpTlqa_q0usCySLjChjll8HA3Ary8aErh01bE1xe%3A6%3AAYc4UV_sJxv6VUev-U695nwzv_wWP49-z_x9pV7eTQ'
-            #us="".join(random.choice(yy)for i in range(16))
-            characters = string.ascii_letters + string.digits
-            qtt = '%'
-        # توليد السلسلة العشوائية
-            us = ''.join(secrets.choice(characters) for _ in range(16))
-            vcc= '%'
-            loo='3A9'
-            zxe='%'
-            ui='3AA'
-            #nbp= 'cEUTo5aCtRrJSyN72i58IY5hJQLXQ_A8_QBuZPWQeFzP4zJ_5DPtyvbtmLARpmKt-8_2a4a0D07KNqUAfHL92Yand7PNHZfGZwHE3_PF89j5Rk0cxgTfrU8ge5NkWjqegZ_pMAlrXO_zbFTfnYdswA3I-CnKwd4w'
-            #sqq=''.join(random.choice(nbp)for i in range(40))
-            characters = string.ascii_letters + string.digits
-        # توليد السلسلة العشوائية
-            session_id = ''.join(secrets.choice(characters) for _ in range(41))
-            user3=user2 + qtt + us + vcc + loo + zxe + ui + session_id
-            digits = string.digits
-        # توليد الرقم العشوائي
-            ds = ''.join(secrets.choice(digits) for _ in range(11))
-            nm = int("".join(random.choice('6789')for i in range(1)))
-            vm = str("".join(random.choice('1234567890qwertyuiopasdfghjklzxcvbnm')for i in range(nm)))
-            digits = string.digits
-        # توليد الرقم العشوائي
-            ur = ''.join(secrets.choice(digits) for _ in range(15))
-            digits = string.digits
-        # توليد الرقم العشوائي
-            fbm = ''.join(secrets.choice(digits) for _ in range(15))
-            characters = string.ascii_letters + string.digits
-            shbid = ''.join(secrets.choice(characters) for _ in range(72))
-            #characters = string.ascii_letters + string.digits
-            #fbsr = ''.join(secrets.choice(characters) for _ in range(300))
-            #characters = string.ascii_letters + string.digits
-            #fbs = ''.join(secrets.choice(characters) for _ in range(25))
-            #characters = string.ascii_letters + string.digits
-            #fns = ''.join(secrets.choice(characters) for _ in range(11))
-            #characters = string.ascii_letters + string.digits
-            #ggf = ''.join(secrets.choice(characters) for _ in range(5))
-            characters = string.ascii_letters + string.digits
-            claim = ''.join(secrets.choice(characters) for _ in range(48))
-            digits = string.digits
-        # توليد الرقم العشوائي
-            app = ''.join(secrets.choice(digits) for _ in range(15))
-            digits = string.digits
-        # توليد الرقم العشوائي
-            asd = ''.join(secrets.choice(digits) for _ in range(6))
-            #username = random.choice(nltk_words)
-            url = f'https://www.instagram.com/api/v1/web/search/topsearch/?context=blended&include_reel=true&query={vm}&rank_token=0.{ur}&search_surface=web_top_search'
-            headers={
-                'x-requested-with': 'XMLHttpRequest',
-                'x-ig-www-claim': f'hmac.{claim}',
-                'x-ig-app-id': f'{app}',
-                'x-csrftoken': csrf_token,
-                'x-asbd-id': f'{asd}',
-                'user-agent': str(generate_user_agent()),
-                'sec-fetch-site': 'same-origin',
-                'sec-fetch-mode': 'cors',
-                'sec-fetch-dest': 'empty',
-                'sec-ch-ua-mobile': '?0',
-                'sec-ch-ua': '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"',
-                'referer': 'https://www.instagram.com/explore/search/',
-                'cookie': f'ig_nrcb=1; mid={mid}ig_did={cookies_string}; fbm_{fbm}=base_domain=.instagram.com; csrftoken={csrf_token}; ds_user_id=' + ds + '; sessionid=' + user3+ f'; shbid="11206,{ds},{ds}:{shbid}"; shbts="{ds},{ds},{ds}:{shbid}";fbsr_{fbm}={cookies_string}; rur="CLN,{ds},{ds}:{shbid}"',
-                'accept-language': 'en-US,en;q=0.9',
-                'accept-encoding': 'gzip, deflate, br',
-                'accept': '*/*'
-                }
-            re =requests.get(url,headers=headers).json()
-            q=0
-            try:
-                while True:
-                    q+=1     
-                    user=re['users'][q]['user']['username']+'@gmail.com'
-                    print(f'User :-> {user}')
-                    with open("INSTAGRAMV3.txt","a")as no:
-                        no.write(user+'\n')
-            except:
-                h()
-        except ConnectionError:
-            h()
-        except ValueError:
-            h()
-        except requests.exceptions.Timeout:
-            h()
-        except requests.ConnectionError:
-            h()
-        except requests.exceptions.JSONDecodeError:
-            h()
+   #sessi='318506585%3ACVqw0bbsyimqSY%3A7%3AAYc_Nfk3SCTLr1vnJW9ueTXVuaOVojaDNP-ikecVHA'
+   while True:
+    #hh = [
+    #"ar_AA", "ar_AE", "ar_BH", "ar_EG", "ar_JO", "ar_PS", "ar_SA", "az_AZ",
+    #"bg_BG", "bn_BD", "bs_BA", "cs_CZ", "da_DK", "de", "de_AT", "de_CH", "de_DE",
+    #"dk_DK", "el_CY", "el_GR", "en", "en_AU", "en_CA", "en_GB", "en_IE", "en_IN",
+    #"en_NZ", "en_PH", "en_TH", "en_US", "es", "es_AR", "es_CA", "es_CL", "es_CO",
+    #"es_ES", "es_MX", "et_EE", "fa_IR", "fi_FI", "fil_PH", "fr_BE", "fr_CA", "fr_CH",
+    #"fr_FR", "ga_IE", "he_IL", "hi_IN", "hr_HR", "hu_HU", "hy_AM", "id_ID",
+    #"it_CH", "it_IT", "ja_JP", "ka_GE", "ko_KR", "la", "lb_LU", "lt_LT", "lv_LV",
+    #"mt_MT", "ne_NP", "nl_BE", "nl_NL", "no_NO", "or_IN", "pl_PL", "pt_BR", "pt_PT",
+    #"ro_RO", "ru_RU", "sk_SK", "sl_SI", "sq_AL", "sv_SE", "ta_IN", "th", "th_TH",
+    #"tl_PH", "tr_TR", "tw_GH", "uk_UA", "vi_VN", "zh_CN", "zh_TW", "zu_ZA"
+   #]
+    #gg=random.choice(hh)
+    faker = Faker()
+    cookies_value=faker.uuid4()
+    cookies_string=f"{cookies_value}"
+    #mid=str("".join(random.choice('ZNS8TAABAAGIluu5GdRKW7-kOo4vZIwIGQALAAFJh0hs0zugnqEWswdVZNOoBQALAAGNtLzGeFVzHXDZTR_3')for i in range(28)))
+    #mid = secrets.token_hex(28)
+    characters = string.ascii_letters + string.digits
+    mid = ''.join(secrets.choice(characters) for _ in range(28))
+    #csr=str("".join(random.choice('BgqHBezVdVLIwiiK2vnQoMeHfwDnEDdy4ev2UhLwIvaMMmcTnIPLlnYe9eKIrk6h')for i in range(32)))
+    characters = string.ascii_letters + string.digits
+    csrf_token = ''.join(secrets.choice(characters) for _ in range(32))
+    #datr=str("".join(random.choice('qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890')for i in range(24)))
+    #tok=str("".join(random.choice('BgqHBezVdVLIwiiK2vnQoMeHfwDnEDdy4ev2UhLwIvaMMmcTnIPLlnYe9eKIrk6hIchbyeD2EMfxlXtEidhVb473sX2nACJi')for i in range(32)))
+    #ce="".join(random.choice('1234567890')for i in range(3))
+    #nn="".join(random.choice('1234567890')for i in range(2))
+    #user1='3185065856117232390916041093751954736743761365466232234569147861383944408'
+    #kk = random.randint(10,11)
+    #user2="".join(random.choice(user1)for i in range(kk))
+    digits = string.digits
+# توليد الرقم العشوائي
+    user2 = ''.join(secrets.choice(digits) for _ in range(10))
+    #yy='3ACVqw0bbsyimqSY%3A7%3AAYc_Nfk3SCTLr1vnJW9ueTXVuaOVojaDNP-ikecVHA%3AwsGfd6prEwVhQi%3A9%3AAYc2pc3P-nMx-khlBp4mOvkT39Zj7G6UXWn3CSXKag3Av36lq83bB4QMSG%3A28%3AAYeb3SKZK1ftXI_IOeqbkTLg1N_ve1vxmLkQ2qc05A3AyvYh8ztbg9qPOl%3A5%3AAYetGkds5jo18ck0uZW3I_tmj1dqk3Q9YRUrSaIYsQ3AOKLDLNPsHYGTJl%3A0%3AAYeYbOklyVCesUBg0pE2scMTw8RgelDdx4eVIQ_2hQ3AZvWuI0EbY8PXmw%3A2%3AAYexLLuc7bASBuyVWaAZuEy6qmu0f8XAnkZkgxyrIw3A3hbzW3nBjg5gXG%3A25%3AAYcyM6J_IhqRi2bFV1II17_FkjtAMjB0KXQ5Q0Khvw3AsyVlIj4ZDzyRPO%3A5%3AAYfGLAn2jh_fwDsnJupuDgVG2BBWgWiyjdH5fTi5Fw3A0zNy29n3aeW9ZI%3A16%3AAYe5NkWjqegZ_pMAlrXO_zbFTfnYdswA3I-CnKwd4w3ANhynbbv9oTPItn%3A11%3AAYfHL92Yand7PNHZfGZwHE3_PF89j5Rk0cxgTfrU8g3AOrDDBg3KyjB4Z4%3A27%3AAYcEUTo5aCtRrJSyN72i58IY5hJQLXQ_A8_QBuZPWQ3AvJYrEgtUCt5sgo%3A7%3AAYeFzP4zJ_5DPtyvbtmLARpmKt-8_2a4a0D07KNqUA3APjfLNuNjfj7z6u%3A25%3AAYfPNAz2A6IGXdKjqNg-Ge7NbJ1Y_ep6njcF2NlK5w3A2WIqaZiNrLBelY%3A27%3AAYfpoMf8AULuX7BmZnbAlFbKbtKz5yIRAM1QRCByWQ3AKg6IycgpKB3eVJ%3A3%3AAYfgX0TQlpmYSR6ba0ZpTlqa_q0usCySLjChjll8HA3Ary8aErh01bE1xe%3A6%3AAYc4UV_sJxv6VUev-U695nwzv_wWP49-z_x9pV7eTQ'
+    #us="".join(random.choice(yy)for i in range(16))
+    characters = string.ascii_letters + string.digits
+    qtt = '%'
+# توليد السلسلة العشوائية
+    us = ''.join(secrets.choice(characters) for _ in range(16))
+    vcc= '%'
+    loo='3A9'
+    zxe='%'
+    ui='3AA'
+    #nbp= 'cEUTo5aCtRrJSyN72i58IY5hJQLXQ_A8_QBuZPWQeFzP4zJ_5DPtyvbtmLARpmKt-8_2a4a0D07KNqUAfHL92Yand7PNHZfGZwHE3_PF89j5Rk0cxgTfrU8ge5NkWjqegZ_pMAlrXO_zbFTfnYdswA3I-CnKwd4w'
+    #sqq=''.join(random.choice(nbp)for i in range(40))
+    characters = string.ascii_letters + string.digits
+# توليد السلسلة العشوائية
+    session_id = ''.join(secrets.choice(characters) for _ in range(41))
+    user3=user2 + qtt + us + vcc + loo + zxe + ui + session_id
+    digits = string.digits
+# توليد الرقم العشوائي
+    ds = ''.join(secrets.choice(digits) for _ in range(11))
+    agent=faker.user_agent()
+    nm = int("".join(random.choice('6789')for i in range(1)))
+    vm = str("".join(random.choice('1234567890qwertyuiopasdfghjklzxcvbnm')for i in range(nm)))
+    digits = string.digits
+# توليد الرقم العشوائي
+    #ur = ''.join(secrets.choice(digits) for _ in range(15))
+    digits = string.digits
+# توليد الرقم العشوائي
+    fbm = ''.join(secrets.choice(digits) for _ in range(15))
+    characters = string.ascii_letters + string.digits
+    shbid = ''.join(secrets.choice(characters) for _ in range(72))
+    #characters = string.ascii_letters + string.digits
+    #fbsr = ''.join(secrets.choice(characters) for _ in range(300))
+    #characters = string.ascii_letters + string.digits
+    #fbs = ''.join(secrets.choice(characters) for _ in range(25))
+    #characters = string.ascii_letters + string.digits
+    #fns = ''.join(secrets.choice(characters) for _ in range(11))
+    #characters = string.ascii_letters + string.digits
+    #ggf = ''.join(secrets.choice(characters) for _ in range(5))
+    characters = string.ascii_letters + string.digits
+    claim = ''.join(secrets.choice(characters) for _ in range(48))
+    digits = string.digits
+# توليد الرقم العشوائي
+    app = ''.join(secrets.choice(digits) for _ in range(15))
+    digits = string.digits
+# توليد الرقم العشوائي
+    asd = ''.join(secrets.choice(digits) for _ in range(6))
+    url = f'https://www.instagram.com/api/v1/web/search/topsearch/?context=blended&include_reel=true&query={vm}'
+    headers={
+        'x-requested-with': 'XMLHttpRequest',
+        'x-ig-www-claim': f'hmac.{claim}',
+        'x-ig-app-id': f'{app}',
+        'x-csrftoken': csrf_token,
+        'x-asbd-id': f'{asd}',
+        'user-agent': agent,
+        'sec-fetch-site': 'same-origin',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-dest': 'empty',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua': '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"',
+        'referer': 'https://www.instagram.com/explore/search/',
+        'cookie': f'ig_nrcb=1; mid={mid}ig_did={cookies_string}; fbm_{fbm}=base_domain=.instagram.com; csrftoken={csrf_token}; ds_user_id=' + ds + '; sessionid=' + user3+ f'; shbid="11206,{ds},{ds}:{shbid}"; shbts="{ds},{ds},{ds}:{shbid}";fbsr_{fbm}={cookies_string}; rur="CLN,{ds},{ds}:{shbid}"',
+        'accept-language': 'en-US,en;q=0.9',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept': '*/*'
+        }
+    re =requests.get(url,headers=headers).json()
+    q=0
+    try:
+        while True:
+            q+=1     
+            user=re['users'][q]['user']['username']+'@gmail.com'
+            print(f'{X}User :-> {user}')
+            with open("list_TEST.txt","a")as no:
+                no.write(user+'\n')
+    except:
+        h()
 
 def inst():
     try:
@@ -595,7 +580,7 @@ def home():
             t = threading.Thread(target=h)
             t.start()
             prox_list.append(t)
-            time.sleep(0.01)
+            time.sleep(0.00)
         h()
      elif vc==2:
          inst()
