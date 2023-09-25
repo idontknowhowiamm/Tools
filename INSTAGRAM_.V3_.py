@@ -537,16 +537,7 @@ def inst():
             else:
                 print(f'{Z}Error Account {Y}InstaGram : {Z}{email}')
 
-    except ConnectionError:
-        inst()
-    except ValueError:
-        inst()
     except requests.exceptions.Timeout:
-        inst()
-    except requests.ConnectionError:
-        inst()
-
-    except requests.exceptions.JSONDecodeError:
         inst()
 
                 
