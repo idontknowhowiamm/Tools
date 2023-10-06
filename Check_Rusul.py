@@ -220,26 +220,6 @@ def Home():
 2 - فحص اللسته
 3 - حذفي السته بعد ماسحبتي وفحصتي منا
 
-امداج رسل
-"""
-    print(Logo)
-    try:
-        inpu = int(input('اختاري رقم : '))
-    except:
-        print('خطا في ادخال القيمه قيمه لو تمن كهكهكهكه')
-    if inpu==1:
-        GetUsers()
-    elif inpu==2:
-        Hacked()
-    elif inpu==3:
-        DeleFile()
-Home()
-    Logo = f"""
-1 - سحب للسته 
-2 - فحص اللسته
-3 - حذفي السته بعد ماسحبتي وفحصتي منا
-
-امداج رسل
 """
     print(Logo)
     try:
