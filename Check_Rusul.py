@@ -168,7 +168,7 @@ def Hacked(username):
 def GetUsers():
     HUNTER = str(Hunter.Services())
     CSRF = secrets.token_hex(32)
-    text='jrogersevilpiratestudio1234567890'
+    text='1234567890qwertyuiopasdfghjklzxcvbnm'
     numb='56789'
     user12=int("".join(random.choice(numb)for i in range(1)))
     usernamee=str("".join(random.choice(text)for i in range(user12)))
