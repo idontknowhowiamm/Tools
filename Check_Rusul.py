@@ -10,7 +10,7 @@ import os
 
 
 def GetUsers():
-    sessionid = input('ادخلي السين... : ')
+    sessionid = input('ادخلي السيشن... : ')
     HUNTER = str(Hunter.Services())
     CSRF = secrets.token_hex(32)
     text='1234567890qwertyuiopasdfghjklzxcvbnm'
@@ -230,10 +230,6 @@ def Home():
     if inpu==1:
         GetUsers()
     elif inpu==2:
-        Hacked()
-    elif inpu==3:
-        DeleFile()
-Home()
         Hacked()
     elif inpu==3:
         DeleFile()
