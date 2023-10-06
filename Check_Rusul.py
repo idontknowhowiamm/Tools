@@ -234,3 +234,7 @@ def Home():
     elif inpu==3:
         DeleFile()
 Home()
+        Hacked()
+    elif inpu==3:
+        DeleFile()
+Home()
