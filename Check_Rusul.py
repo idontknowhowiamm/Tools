@@ -65,7 +65,7 @@ def Hacked(username):
             }
 
             params = {
-                'username': user,
+                'username': username,
             }
 
             r = requests.get(
